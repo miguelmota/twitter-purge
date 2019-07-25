@@ -10,7 +10,7 @@ Install dependencies:
 bundle install
 ```
 
-Set environment variables:
+Set environment variables in `.env`:
 
 - `TWITTER_CONSUMER_KEY`
 - `TWITTER_CONSUMER_SECRET`

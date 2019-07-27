@@ -54,9 +54,32 @@ end
 username = ARGV[0]
 puts "user: #{username}"
 
+filename = "#{username}.cache"
+f = open(filename, "a")
+
+checked_list = []
+if File.exists?(filename)
+  checked_list = File.readlines(filename)
+end
+
 following_ids = following(username)
 puts "following count: #{following_ids.count}"
 
 following_ids.each do |friend_id|
+  skip = false
+  checked_list.each do |line|
+    if line.strip.include? friend_id.to_s
+      skip = true
+      puts "skipping check: #{friend_id}"
+      next
+    end
+  end
+
+  if skip
+    next
+  end
+
   check(friend_id)
+
+  f << "#{friend_id}\n"
 end

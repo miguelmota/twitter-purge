@@ -39,7 +39,7 @@ end
 
 def unfollow(friend_id)
   @client.unfollow(friend_id)
-  puts "unfollowed: #{friend_id}"
+  puts "unfollowed user: #{friend_id}"
 rescue Twitter::Error::TooManyRequests => error
   p error
   sleep error.rate_limit.reset_in
@@ -52,7 +52,7 @@ if ARGV.empty?
 end
 
 username = ARGV[0]
-puts "user: #{username}"
+puts "Twitter account: #{username}"
 
 filename = "#{username}.cache"
 f = open(filename, "a")
@@ -83,3 +83,5 @@ following_ids.each do |friend_id|
 
   f << "#{friend_id}\n"
 end
+
+puts "done"

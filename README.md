@@ -4,23 +4,38 @@
 
 ## Getting started
 
-Install dependencies:
+Make sure to have [ruby](https://www.ruby-lang.org/en/) installed (you can use [rvm](https://rvm.io/)), and then install dependencies with [bundler](https://bundler.io/):
 
-```
+```bash
 bundle install
 ```
 
-Set environment variables in `.env`:
+Set the required environment variables in `.env` containing your twitter API credentials:
 
 - `TWITTER_CONSUMER_KEY`
 - `TWITTER_CONSUMER_SECRET`
 - `TWITTER_ACCESS_TOKEN_KEY`
 - `TWITTER_ACCESS_TOKEN_SECRET`
 
-Run script:
+You can use the sample env file for reference:
 
 ```bash
-ruby purge.rb @username
+mv .env.sample .env
+```
+
+You can get Twitter API credentials from the Twitter [apps page](https://developer.twitter.com/en/apps).
+
+Run the script passing your username:
+
+```bash
+$ ruby purge.rb @username
+
+Twitter account: @miguelmota
+following count: 4154
+checking user: 45409867
+checking user: 133008925
+checking user: 26318018
+...
 ```
 
 ## License

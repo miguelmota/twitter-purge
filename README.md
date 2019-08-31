@@ -38,6 +38,8 @@ checking user: 26318018
 ...
 ```
 
+The script will check if the user has tweeted in the last 30 days. If they haven't tweeted in that timeframe, then it will unfollow them. The script creates a `.cache` file containing checked users so if the script is halted you can resume skipping already checked users. The script is simple and easy to modify to your own criteria.
+
 ## License
 
 [MIT](LICENSE)

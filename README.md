@@ -30,7 +30,7 @@ Run the script passing your username:
 ```bash
 $ ruby purge.rb @username
 
-Twitter account: @miguelmota
+Twitter account: @username
 following count: 4154
 checking user: 45409867
 checking user: 133008925
